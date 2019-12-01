@@ -7,8 +7,7 @@ import { Route } from 'react-router-dom'
 
 class App extends Component {
     state = {
-        contacts: [],
-        screen: 'list'
+        contacts: []
     }
     //Use componentDidMount to fetch data from server and update the contacts
     componentDidMount(){
@@ -38,11 +37,6 @@ class App extends Component {
             <ListContacts
                 contacts={this.state.contacts}
                 onDeleteContact ={this.removeContact}
-                onNavigate ={() => {
-                    this.setState(() => ({
-                        screen: 'create'
-                    }))
-                }}
             />
         )} />
         <Route path='/create' component={CreateContact} />
